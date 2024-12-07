@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1" />
+    <title>Team - Unique</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Background styling for consistency */
+      body {
+        background-image: url("./img/galaxy.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        overflow-y: auto;
+      }
+
+      /* Team Section Styling */
+      .team-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 100px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .team-card {
+        width: 250px;
+        height: 350px;
+        perspective: 1000px;
+        margin: 20px;
+      }
+
+      .card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease;
+        cursor: pointer;
+      }
+
+      .card:hover {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .card-front {
+        background: linear-gradient(135deg, #020b30, #3a4e7a);
+      }
+
+      .card-front img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+
+      /* Set card front name to white */
+      .card-front h3 {
+        color: white;
+      }
+
+      .card-back {
+        background-color: #ffffff;
+        color: #333;
+        transform: rotateY(180deg);
+        text-align: center;
+        border-radius: 10px;
+      }
+
+      .social-links a {
+        text-decoration: none;
+        color: #0077b5;
+        margin: 0 10px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Header Section-->
+    <header id="header_wrapper">
+      <div class="container">
+        <div class="header_box">
+          <div class="logo">
+            <a href="index.html"
+              ><img
+                src="img/logo.png"
+                alt="logo"
+                style="width: 110px; height: auto"
+            /></a>
+          </div>
+          <nav class="navbar navbar-inverse" role="navigation">
+            <div class="navbar-header">
+              <button
+                type="button"
+                id="nav-toggle"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target="#main-nav"
+              >
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="main-nav" class="collapse navbar-collapse navStyle">
+              <ul class="nav navbar-nav" id="mainNav">
+                <li><a href="index.html" class="scroll-link">Home</a></li>
+                <li class="active">
+                  <a href="team.html" class="scroll-link">Team</a>
+                </li>
+                <li><a href="events.html" class="scroll-link">Events</a></li>
+                <li>
+                  <a
+                    href="https://techfounders-blog.pages.dev/"
+                    target="_blank"
+                    class="scroll-link"
+                    >Blog</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Team Section -->
+    <section id="team_section" class="team-section">
+      <!-- James Wang -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/James Wang.jpg" alt="James Wang" />
+            <h3>James Wang</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>James Wang</h3>
+            <p>
+              Hi everyone, I am a sophomore at UC Berkeley studying Data
+              Science, Statistics, and Computer Science. I am particularly
+              interested in data engineering, cloud computing services, and
+              distributed systems. I enjoy playing soccer and piano, and I look
+              forward to connecting and exchanging ideas with everyone!
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/james-wang-6595202bb/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://www.instagram.com/jameswang233/" target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: Sonnycoys7</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yiyang Ma -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Yiyang Ma (Maria).jpg" alt="Yiyang Ma" />
+            <h3>Yiyang Ma</h3>
+            <p>Head, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>Yiyang Ma</h3>
+            <p>
+              Hey! I'm currently a sophomore student at Berkeley with a passion
+              for innovative design, UI/UX, AI, and data analysis. My main
+              interests are in programming and creating impactful projects. In
+              my free time, I love playing badminton, piano, and sailing.
+            </p>
+            <div class="social-links">
+              <a href="https://linkedin.com/in/mariayiyangma" target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://www.instagram.com/mariayiyangm/" target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: 1585182892</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Albert Xie -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/albert_headshot.JPG" alt="Albert Xie" />
+            <h3>Albert Xie</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>Albert Xie</h3>
+            <p>
+              Hello, everyone! I’m a senior at UC Berkeley, majoring in
+              Electrical Engineering and Computer Science. I have a strong
+              interest in mixed reality and artificial intelligence, and I’m
+              excited to connect and interact with all of you!
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/albert-xie-736471290"
+                target="_blank"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shengxiang Lin -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Shengxiang Lin.jpg" alt="Shengxiang Lin" />
+            <h3>Shengxiang Lin</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>Shengxiang Lin</h3>
+            <p>
+              Hi everyone, I am an international student at UC Berkeley studying
+              Computer Science and Technology. I am particularly interested in
+              artificial intelligence and operating systems. I look forward to
+              interacting with all of you!
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/shengxiang-lin-b13106325/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="#">Wechat: wxid_5p1rkhst5ebm22</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fangyuan Lin -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Fangyuan Lin.jpg" alt="Fangyuan Lin" />
+            <h3>Fangyuan Lin</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>Fangyuan Lin</h3>
+            <p>
+              I am a rising probabilist, broadly interested in probability
+              theory, stochastic processes and information theory.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/fangyuan-lin-93487b20b/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a
+                href="https://www.instagram.com/keep_learning_math_until_i_die/"
+                target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: lfy1980361663</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boxuan Hu -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Boxuan Hu.jpg" alt="Boxuan Hu" />
+            <h3>Boxuan Hu</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>Boxuan Hu</h3>
+            <p>
+              Hi there. I am broadly interested in computer systems and
+              networks. My research currently focuses on Datacenter Networks,
+              decentralized SDN and Sky Computing. If you are interested in my
+              research, please feel free to contact me.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/boxuan-hu-20040220root/"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://www.instagram.com/huboxuanhu/" target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: XJTUhbx2004</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yenny Ying -->
+      <div class="team-card">
+        <div class="card">
+          <div class="card-front">
+            <img src="img/Yenny Ying.jpg" alt="Yenny Ying" />
+            <h3>Yenny Ying</h3>
+            <p>Member, Tech Department</p>
+          </div>
+          <div class="card-back">
+            <h3>Yenny Ying</h3>
+            <p>
+              Hey! I am Yenny, a current junior at UC Berkeley. I am majoring in
+              applied math and data science. Love movies and R&B.
+            </p>
+            <div class="social-links">
+              <a
+                href="https://www.linkedin.com/in/yuan-ying-2b4516328"
+                target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://www.instagram.com/yenn_y1009/" target="_blank"
+                >Instagram</a
+              >
+              <a href="#">Wechat: serenity-yy1009</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  </body>
+</html>
