@@ -17,41 +17,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
 <body>
 
-<!--Header_section-->
-<header id="header_wrapper">
-  <div class="container">
-    <div class="header_box">
-      <div class="logo">
-        <a href="#"><img src="img/SMClogo.png" alt="logo" style="width: 110px; height: auto;"></a>
-      </div>
-	  <nav class="navbar navbar-inverse" role="navigation">
-      <div class="navbar-header">
-        <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+  <header id="header_wrapper">
+    <div class="container">
+      <div class="header_box">
+        <div class="logo">
+          <a href="#"><img src="img/SMClogo.png" alt="logo" style="width: 110px; height: auto;"></a>
         </div>
-	    <div id="main-nav" class="collapse navbar-collapse navStyle">
-			<ul class="nav navbar-nav" id="mainNav">
-			  <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
-			  <li><a href="./team.html" class="scroll-link">Team</a></li>
-			  <!-- <li><a href="https://lu.ma/z6jlzzkj" class="scroll-link">Events</a></li> -->
-        <!-- <li><a href="https://techfounders-blog.pages.dev/" target="_blank" class="scroll-link">Blog</a></li> -->
+        <div class="search_bar">
+          <input type="text" placeholder="Search..." />
+        </div>
+        <nav class="navbar navbar-inverse" role="navigation">
+          <div class="navbar-header">
+            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> 
+              <span class="sr-only">Toggle navigation</span> 
+              <span class="icon-bar"></span> 
+              <span class="icon-bar"></span> 
+              <span class="icon-bar"></span> 
+            </button>
+          </div>
+          <div id="main-nav" class="collapse navbar-collapse navStyle">
+            <ul class="nav navbar-nav" id="mainNav">
+              <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
+              <li><a href="./team.html" class="scroll-link">Team</a></li>
+            </ul>
+          </div>
+        </nav>
       </div>
-	 </nav>
     </div>
-  </div>
-</header>
-<!--Header_section--> 
-
-<!-- Hero Section -->
+  </header>
+  
+<!--Hero_Section-->  
 <section id="hero_section">
   <div class="hero_content">
-    <h1>The First Tech <br>
-      Entrepreneur <br> 
-      Community at <br> 
-      Berkeley</h1>
-    <p><span class="highlight">TechFounders@Berkeley</span> is a registered <br>
-      <span class="highlight">UC Berkeley</span> club and non-profit organization <br>
-      focused on cultivating future leaders in <br>
-      technology and business.</p>
+    <h1>The First All-in-One <br>
+      Course Selection and<br>
+      Planning System<br>
+      At Berkeley</h1>
+    <p><span class="highlight">StemyCourses@Berkeley</span> is the ultimate <br>
+      platform for Berkeley students to explore <br>
+      and plan their STEM classes efficiently. <br>
+      Discover course insights, get senior advice, <br>
+      and simplify your academic journey.</p>
     <a href="#service" class="learn_more_btn">Learn More</a>
   </div>
 </section>
@@ -61,10 +67,10 @@
 <section id="story_section">
   <div class="story_container">
     <div class="text_section">
-      <h2><strong><em>Our Story</em></strong></h2>
+      <h2><strong><em>Our Goal</em></strong></h2>
       <p>
         <em>
-        TechFounders@Berkeley, formerly known as Alpha Venture Club, is UC Berkeley's only student-led, non-profit organization dedicated exclusively to technology and venture creation. We empower enthusiastic entrepreneurs to thrive in today's dynamic startup landscape with cutting-edge solutions, create a space where startups can grow, thrive, and connect with resources that will take your mission to the next level.
+          Our website is dedicated to helping Berkeley's computer science (CS) and data science (DS) students choose courses efficiently. Due to the variety of CS and DS course options, many students are easily confused when planning their learning paths. Our website will provide a detailed introduction of each course and collect course selection suggestions and feedback from seniors to help students choose suitable courses from different directions. By summarizing recommendations and planning suggestions, our application helps users make learning plans more easily and solves the problems of information asymmetry and selection difficulties encountered by students in the process of course selection.
         </em>
       </p>
     </div>
@@ -74,236 +80,49 @@
  
 <!--Help_Succeed-->
 <section id="help_section">
-  <h2><strong><em>How We Help You Succeed</em></strong></h2>
+  <div class="help_title">
+    <h2><strong><em>All-in-One Information Gathering and <br> Decision Making Platform</em></strong></h2>
+  </div>
   <div class="help_container">
     <div class="help_block">
-      <h3><strong><em>Exclusive Access to Serial Entrepreneurs and VCs</em></strong></h3>
-      <img src="/img/GenAI.jpg" alt="Image 1">
+      <h3><strong><em>Rate My Professor</em></strong></h3>
+      <img src="/img/RMP.png" alt="Rate My Professor">
       <p>
         <em>
-          TechFounders@Berkeley's students gain unique opportunities to engage directly with experienced entrepreneurs and venture capitalists. These one-on-one interactions allow you to learn from their successes and failures, providing insights that can accelerate your path to success.
+          Rate My Professor offers student-driven ratings and reviews of instructors. It helps Berkeley students make informed decisions by providing insights on teaching quality, workload, and exam styles, aiding in course selection tailored to individual learning preferences.
         </em>
       </p>
     </div>
     <div class="help_block">
-      <h3><strong><em>Discovering the Perfect Co-Founder for Your Startup Journey</em></strong></h3>
-      <img src="/img/Partners.jpg" alt="Image 2">
+      <h3><strong><em>Berkeley Academic Guide</em></strong></h3>
+      <img src="/img/berkeley_academic_guide.jpg" alt="Berkeley Academic Guide">
       <p>
         <em>
-          TechFounders@Berkeley empowers students in building startups with collaboration with corporations and investors. We connect them with like-minded students who share their passion for technology and entrepreneurship, finding potential co-founders and team members who align with their vision.
+          Berkeley Academic Guide is the official resource for course descriptions, prerequisites, and academic policies. It provides detailed overviews and scheduling information, allowing students to efficiently plan their STEM coursework and degree paths.
         </em>
       </p>
     </div>
     <div class="help_block">
-      <h3><strong><em>Comprehensive Courses and One-on-One Mentorship</em></strong></h3>
-      <img src="/img/Presentation.jpg" alt="Image 3">
+      <h3><strong><em>Reddit</em></strong></h3>
+      <img src="/img/reddit.png" alt="Reddit">
       <p>
         <em>
-          TechFounders@Berkeley's structured courses cover essential areas like business strategy, technology, and law, providing a solid foundation for building your startup. Additionally, our one-on-one mentoring sessions give you personalized guidance to navigate the challenges you’ll face.
+          Reddit’s Berkeley and STEM-related communities offer crowdsourced advice on courses, professors, and student experiences. With real-time discussions and reviews, it helps students gather diverse opinions and strategies for course success.
+        </em>
+      </p>
+    </div>
+    <div class="help_block">
+      <h3><strong><em>AI ChatBot</em></strong></h3>
+      <img src="/img/chatbot.avif" alt="AI ChatBot">
+      <p>
+        <em>
+          Our AI ChatBot remembers your course history and provides personalized recommendations using a fine-tuned model. It offers interactive and comprehensive support for planning and refining your academic path with ease and confidence.
         </em>
       </p>
     </div>
   </div>
 </section>
 <!--Help_Succeed-->
-
-<!--Why Choose Us-->
-<section id="Why_Choose_Us_Section">
-  <div class="Why_Choose_Us_Content">
-      <h2><em>Why Choose Us</em></h2>
-      <div class="conments_container">
-          <div class="text-box">
-              <p><span class="title">Focus on Real-World Impact: <br><strong>(Mission)</strong></span><br>
-              We are the only student-led organization at UC Berkeley exclusively dedicated to technology and venture creation. Our hands-on approach ensures you gain practical skills that are immediately applicable, from coding to pitching investors.</p>
-          </div>
-          <div class="text-box">
-              <p><span class="title">Unique Access to Top Investors/Experts: <br><strong>(Vision)</strong></span><br>
-              Our carefully curated network gives you unparalleled access to venture capitalists, industry leaders, and tech innovators. Through mentorship and exclusive events, we provide connections that can open doors to funding, partnerships, and career opportunities.</p>
-          </div>
-          <div class="text-box">
-              <p><span class="title">Commitment to Empowering Founders: <br><strong>(Values)</strong></span><br>
-              We’re not here to just teach concepts—we’re here to help you build something meaningful. With events like Demo Days, pitch competitions, and project showcases, we ensure you leave with the experience, confidence, and network needed to succeed.</p>
-          </div>
-      </div>
-      <div class="stats">
-          <div>
-              <h2>40+</h2>
-              <p>STARTUPS</p>
-          </div>
-          <div>
-              <h2>20+</h2>
-              <p>CORPORATE PARTNERS</p>
-          </div>
-          <div>
-              <h2>50+</h2>
-              <p>VC PARTNERS</p>
-          </div>
-      </div>
-      <div class="partners">
-          <img src="img/logo1.png">
-          <img src="img/logo2.png">
-          <img src="img/logo3.png">
-          <img src="img/logo4.png">
-      </div>
-  </div>
-</section>
-<!--Why Choose Us-->
-
-<!-- Portfolio -->
-<section id="Portfolio" class="content"> 
-  
-  <!-- Container -->
-  <div class="portfolio_title"> 
-    
-    <!-- Title -->
-    <div class="section-title">
-      <h2>Past Events</h2>
-    </div>
-    <!--/Title --> 
-    
-  </div>
-  <!-- Container -->
-  
-  <div class="portfolio-top"></div>
-  
-  <!-- Portfolio Filters -->
-  <div class="portfolio"> 
-    
-    <div id="filters" class="sixteen columns">
-      <ul class="clearfix">
-        <li><a id="all" href="#" data-filter="*" class="active">
-          <h5>All</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".prototype">
-          <h5>ZhenFund Round Table</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".design">
-          <h5>HEURISTIC Capital: Building a Business Plan from Scratch</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".android">
-          <h5>Plug & Play Summit Volunteer</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".appleIOS">
-          <h5>QBAY Social Dinner Party</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".web">
-          <h5>Hysta 25 Years of Innovation</h5>
-          </a></li>
-        <li><a class="" href="#" data-filter=".GenAI">
-          <h5>Gen AI Summit</h5>
-          </a></li>
-      </ul>
-    </div>
-    <!--/Portfolio Filters --> 
-    
-    <!-- Portfolio Wrapper -->
-    <div class="isotope fadeInLeft animated wow" style="position: relative; overflow: hidden; height: 480px;" id="portfolio_wrapper"> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   appleIOS isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic1.jpg"  alt="Portfolio 1"> </div>        
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">SMS Mobile App</h4>
-          </div>
-        </div>
-        </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item-->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic2.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">Finance App</h4>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design  isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic3.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">GPS Concept</h4>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item--> 
-      
-      <!-- Portfolio Item-->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  android  prototype web isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic4.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">Shopping</h4>
-          </div>
-        </div>
-      </div>
-      <!-- Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic5.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">Managment</h4>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  web isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic6.jpg" alt="Portfolio 1"> </div>
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">iPhone</h4>
-          </div>
-        </div>
-      </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item  -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design web isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic7.jpg" alt="Portfolio 1"> </div>       
-        <div class="item_overlay">
-          <div class="item_info"> 
-            <h4 class="project_name">Nexus Phone</h4>
-          </div>
-        </div>
-       </div>
-      <!--/Portfolio Item --> 
-      
-      <!-- Portfolio Item -->
-      <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   android isotope-item">
-        <div class="portfolio_img"> <img src="img/portfolio_pic8.jpg" alt="Portfolio 1"> </div>       
-        <div class="item_overlay">
-          <div class="item_info"> 
-				<h4 class="project_name">Android</h4>
-          </div>
-        </div>
-        </a> </div>
-      <!--/Portfolio Item --> 
-      
-    </div>
-    <!--/Portfolio Wrapper --> 
-    
-  </div>
-  <!--/Portfolio Filters -->
-  
-  <div class="portfolio_btm"></div>
-  
-  
-  <div id="project_container">
-    <div class="clear"></div>
-    <div id="project_data"></div>
-  </div>
- 
-  
-</section>
-<!--/Portfolio --> 
 
 <!--/Contact --> 
 <section class="contact-section">
@@ -335,9 +154,9 @@
       </div>
       <div class="contact">
           <h3>CONTACT</h3>
-          <p>ziyihuang@berkeley.edu</p>
-          <p>yumeng.zhang0502@berkeley.edu</p>
-          <p>(510)-926-8773</p>
+          <p>cubstart@berkeley.edu</p>
+          <p>CalBerkeleyStudent@berkeley.edu</p>
+          <p>(909)-909-9909</p>
       </div>
       <div class="social-media">
           <h3>SOCIAL MEDIA</h3>
@@ -350,6 +169,12 @@
   </div>
 </footer>
 <!--/Footer --> 
+
+<!-- /ChatBot --> 
+<section id="chatbot_section">
+  <img src="/img/chatbot1.png" alt="ChatBot Icon" class="chatbot_floating_image">
+</section>
+<!--/ChatBot --> 
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>

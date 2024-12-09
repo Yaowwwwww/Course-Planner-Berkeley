@@ -95,7 +95,7 @@ p {
 /* Header Styles
 ---------------------------------*/
 #header_wrapper {
-    background: #000;
+    background: #000000;
     padding: 0px 0px;
 }
 .header_box {
@@ -113,9 +113,9 @@ p {
     margin-top: 15px;
     margin-bottom: 15px;
     position: relative;
-    z-index: 2;
-    width: 50%; /* 根据需要调整缩小比例 */
-    height: auto; /* 保持图片比例 */
+    z-index: 1;
+    width: 20% !important;
+    height: auto !important;
 }
 
 .res-nav_click {
@@ -212,6 +212,33 @@ p {
     margin-top: 30px;
 }
 
+/* 搜索框容器 */
+.search_bar {
+    flex-grow: 1; /* 填充剩余空间 */
+    text-align: center; /* 居中对齐 */
+    margin: 0 20px; /* 添加左右间距 */
+}
+
+/* 搜索框样式 */
+.search_bar input {
+    width: 600px; /* 搜索框宽度 */
+    height:70px; /* 搜索框高度 */
+    padding: 10px 15px; /* 内边距 */
+    font-size: 16px; /* 字体大小 */
+    border: 1px solid #ccc; /* 边框 */
+    border-radius: 30px; /* 圆角边框 */
+    background-color: #fff; /* 白色背景 */
+    color: #333; /* 文本颜色 */
+    outline: none; /* 移除焦点边框 */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* 添加轻微阴影 */
+}
+
+/* 搜索框焦点样式 */
+.search_bar input:focus {
+    border-color: #005490; /* 焦点时的边框颜色 */
+    box-shadow: 0px 2px 8px rgba(0, 84, 144, 0.3); /* 强调阴影 */
+}
+
 
 /* Hero Section
 ---------------------------------*/
@@ -223,7 +250,7 @@ p {
     height: 90vh;
     background-color: #000000; /* 替换为实际背景色 */
     padding-bottom: 0; /* 避免下方空白 */
-    background-image: url('/img/main_background.gif'); /* 替换成你的背景动图路径 */
+    background-image: url('/img/berkeley.jpg'); /* 替换成你的背景动图路径 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -242,7 +269,7 @@ p {
     text-align: center;
     position: relative;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.5); /* 半透明背景，提高文字可读性 */
+    background: rgba(0, 0, 0, 0.1); /* 半透明背景，提高文字可读性 */
     border-radius: 8px;
 }
 
@@ -271,7 +298,7 @@ p {
     font-size: 1.1em;
     line-height: 1.7;
     margin-bottom: 30px;
-    color: #ccc;
+    color: #ffffff;
 }
 
 .learn_more_btn {
@@ -300,7 +327,7 @@ p {
     height: 600px;
     padding: 90px 10;
     color: white;
-    background-image: url('/img/galaxy.jpg'); /* 替换成你的背景图片路径 */
+    background-image: url('/img/berkeley.jpg'); /* 替换成你的背景图片路径 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -316,7 +343,7 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* 灰色半透明遮罩 */
+    background-color: rgba(0, 0, 0, 0.4); /* 灰色半透明遮罩 */
     z-index: 1;
 }
 
@@ -353,11 +380,22 @@ p {
 /* Help_Succeed
 ---------------------------------*/
 /* 主容器样式 */
+
+#story_section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* 灰色半透明遮罩 */
+    z-index: 1;
+}
 #help_section {
     text-align: center;
     padding: 60px 0;
     color: white;
-    background-image: url('/img/galaxy.jpg'); /* 替换为实际背景路径 */
+    background-image: url('/img/class4.jpg'); /* 替换为实际背景路径 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -366,8 +404,8 @@ p {
 
 #help_section h2 {
     font-size: 36px;
-    margin-bottom: 40px;
-    color: #fff;
+    /* margin-bottom: 40px; */
+    color: #ffffff;
 }
 #help_section h3 {
     font-size: 24px;
@@ -376,24 +414,37 @@ p {
 
 .help_container {
     display: flex;
-    width: 1200px;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 5px;
-    flex-wrap: wrap;
-    padding: 0 10px;
-    margin: 0 auto;
+    flex-wrap: wrap; /* 自动换行 */
+    justify-content: center; /* 水平居中 */
+    gap: 20px; /* 间距 */
+    max-width: 1200px; /* 限制容器宽度 */
+    margin: 0 auto; /* 居中容器 */
+    padding: 0 15px; /* 增加左右内边距 */
 }
 
+
 /* 每个板块样式 */
-.help_block {
+.help_title {
     background: rgba(0, 0, 0, 0.6); /* 半透明背景 */
     padding: 30px;
     border-radius: 10px;
-    max-width: 350px;
+    max-width: 770px;
     width: 100%;
-    text-align: left;
+    text-align: center;
+    margin: 0 auto; /* 自动水平居中 */
+    margin-bottom: 20px;
 }
+
+.help_block {
+    background: rgba(0, 0, 0, 0.6); /* 半透明背景 */
+    padding: 20px; /* 调整内边距 */
+    border-radius: 10px;
+    width: calc(25% - 20px); /* 四栏布局，减去间隙 */
+    max-width: 300px; /* 设置最大宽度 */
+    text-align: left;
+    box-sizing: border-box; /* 包含内边距在宽度内 */
+}
+
 
 .help_block img {
     width: 100%;
@@ -415,7 +466,7 @@ p {
 #Why_Choose_Us_Section {
     position: relative;
     font-family: Arial, sans-serif;
-    background-image: url('/img/galaxy.jpg'); /* 替换为实际背景路径 */
+    background-image: url('/img/berkeley.jpg'); /* 替换为实际背景路径 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -452,7 +503,7 @@ p {
     font-family: 'Roboto', sans-serif;
     font-weight: 900; /* 设置字体粗细 */
     text-transform: uppercase;
-    color: #ffffff; /* 确保标题为白色 */
+    color: #000000; /* 确保标题为白色 */
 }
 
 
@@ -525,122 +576,23 @@ p {
 }
 
 
-
-
-
-/* Portfolio
----------------------------------*/
-
-
-#Portfolio {
-    background-image: url('/img/mw1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    padding: 60px 0px;
-    position: relative; /* 设置为相对定位，确保伪元素定位正确 */
-    z-index: 1; /* 确保内容层级高于遮罩 */
-    /* background-color: #7a7a7a; */
+/* ChatBot */
+.chatbot_floating_image {
+    position: fixed; /* 固定位置，悬浮 */
+    bottom: 50px; /* 距离页面底部 20px */
+    right: 40px; /* 距离页面右侧 20px */
+    width: 120px; /* 设置图片宽度 */
+    height: auto; /* 保持图片比例 */
+    z-index: 1000; /* 确保图片浮在其他内容上方 */
+    cursor: pointer; /* 鼠标悬停时显示为手形 */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* 添加动画 */
 }
 
-#Portfolio::before {
-    content: ''; /* 必须要有内容，否则伪元素不会生效 */
-    position: absolute; /* 绝对定位 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* 灰色遮罩，50% 透明 */
-    z-index: -1; /* 让遮罩层在内容后面 */
-    border-radius: inherit; /* 如果父容器有圆角，保持一致 */
+.chatbot_floating_image:hover {
+    transform: scale(1.1); /* 鼠标悬停时放大 */
+    opacity: 0.8; /* 鼠标悬停时透明度降低 */
 }
 
-.Portfolio-nav {
-    padding: 0;
-    margin: 0 0 45px 0;
-    list-style: none;
-    text-align: center;
-}
-
-.Portfolio-nav li {
-    margin: 0 10px;
-    display: inline;
-}
-
-.Portfolio-nav li a {
-    display: inline-block;
-    padding: 10px 22px;
-    font-size: 12px;
-    line-height: 20px;
-    color: #222222;
-    border-radius: 4px;
-    text-transform: uppercase;
-    background: #f7f7f7;
-    margin-bottom: 5px;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-}
-
-.Portfolio-nav li a:hover {
-    background: #005490;
-    color: #fff;
-    text-decoration: none;
-}
-
-.portfolioContainer {
-    margin: 0 auto;
-    padding-left: 15px;
-    width: auto !important;
-}
-
-.Portfolio-box {
-    text-align: center;
-    width: 350px;
-    overflow: hidden;
-    float: left;
-    padding: 12px 0px;
-}
-
-.Portfolio-box img {
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-}
-
-.Portfolio-box img:hover {
-    opacity: 0.6;
-}
-
-.Portfolio-nav li a.current {
-    background: #005490;
-    color: #fff;
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-}
-
-/* no transition on .isotope container */
-
-.isotope .isotope-item {
-  /* change duration value to whatever you like */
-    -webkit-transition-duration: 0.6s;
-    -moz-transition-duration: 0.6s;
-    transition-duration: 0.6s;
-}
-
-.isotope .isotope-item {
-    -webkit-transition-property: -webkit-transform, opacity;
-    -moz-transition-property: -moz-transform, opacity;
-    transition-property: transform, opacity;
-}
-
-.page_section.paddind {
-    padding-bottom: 60px;
-}
 
 
 
@@ -1561,7 +1513,7 @@ div.mc-image {
 .contact-section {
     text-align: center;
     padding: 50px 20px;
-    background-image: url('/img/milky_way.jpg');
+    background-image: url('/img/berkeley2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
