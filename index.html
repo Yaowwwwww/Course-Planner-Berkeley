@@ -11,40 +11,44 @@
 <link href="css/animate.css" rel="stylesheet" type="text/css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
  
-</head>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
-<body>
-
-  <header id="header_wrapper">
-    <div class="container">
-      <div class="header_box">
-        <div class="logo">
-          <a href="#"><img src="img/SMClogo.png" alt="logo" style="width: 110px; height: auto;"></a>
-        </div>
-        <div class="search_bar">
-          <input type="text" placeholder="Search..." />
-        </div>
-        <nav class="navbar navbar-inverse" role="navigation">
-          <div class="navbar-header">
-            <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> 
-              <span class="sr-only">Toggle navigation</span> 
-              <span class="icon-bar"></span> 
-              <span class="icon-bar"></span> 
-              <span class="icon-bar"></span> 
-            </button>
-          </div>
-          <div id="main-nav" class="collapse navbar-collapse navStyle">
-            <ul class="nav navbar-nav" id="mainNav">
-              <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
-              <li><a href="./team.html" class="scroll-link">Team</a></li>
-            </ul>
-          </div>
-        </nav>
+<header id="header_wrapper">
+  <div class="container">
+    <div class="header_box">
+      <div class="logo">
+        <a href="#"><img src="img/SMClogo.png" alt="logo" style="width: 110px; height: auto;"></a>
       </div>
+      <div class="search_bar" style="display: flex; align-items: center;">
+        <!-- Form to handle search -->
+        <form action="result.html" method="GET" style="display: flex; align-items: center; flex-grow: 1;">
+          <select id="search_option" name="option" style="height: 34px; margin-right: 8px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;">
+            <option value="professors">Professors</option>
+            <option value="classes">Classes</option>
+          </select>
+          <input type="text" name="query" placeholder="Search..." style="flex-grow: 1; padding: 5px; border-radius: 4px; border: 1px solid #ccc;" required />
+          <button type="submit" class="btn btn-primary" style="margin-left: 8px;">Search</button>
+        </form>
+      </div>
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+          <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> 
+            <span class="sr-only">Toggle navigation</span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+            <span class="icon-bar"></span> 
+          </button>
+        </div>
+        
+        <div id="main-nav" class="collapse navbar-collapse navStyle">
+          <ul class="nav navbar-nav" id="mainNav">
+            <li class="active"><a href="#hero_section" class="scroll-link">Home</a></li>
+            <li><a href="./team.html" class="scroll-link">Team</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
+
   
 <!--Hero_Section-->  
 <section id="hero_section">

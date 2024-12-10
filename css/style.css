@@ -153,7 +153,6 @@ p {
     margin: 0 5px;
 }
 
-
 .navStyle ul li:last-child {
     margin: 0 0 0 23px;
 }
@@ -221,8 +220,8 @@ p {
 
 /* 搜索框样式 */
 .search_bar input {
-    width: 600px; /* 搜索框宽度 */
-    height:70px; /* 搜索框高度 */
+    width: 300px; /* 搜索框宽度 */
+    height:36px; /* 搜索框高度 */
     padding: 10px 15px; /* 内边距 */
     font-size: 16px; /* 字体大小 */
     border: 1px solid #ccc; /* 边框 */

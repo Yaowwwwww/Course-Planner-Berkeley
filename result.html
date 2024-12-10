@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1" />
+    <title>StemyCourses</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: 'Roboto', sans-serif;
+          background-image: url('/img/berkeley.jpg');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+      
+        #header_wrapper {
+          background: #000000;
+          padding: 0px 0px;
+        }
+      
+        .header_box {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+          width: 100%;
+          padding: 0 20px;
+        }
+      
+        .search_bar {
+          flex-grow: 1;
+          text-align: center;
+          margin: 0 20px;
+        }
+      
+        .search_bar input {
+          width: 300px;
+          height: 36px;
+          padding: 10px 15px;
+          font-size: 16px;
+          border: 1px solid #ccc;
+          border-radius: 30px;
+          background-color: #fff;
+          color: #333;
+          outline: none;
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+      
+        .search_bar input:focus {
+          border-color: #005490;
+          box-shadow: 0px 2px 8px rgba(0, 84, 144, 0.3);
+        }
+      
+        .main-content {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start; /* 改为 flex-start 确保内容从顶部开始 */
+          align-items: center;
+          padding: 10px 20px; /* 仅保留适当的内边距 */
+        }
+      
+        .result-card {
+          background: white;
+          border-radius: 10px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          padding: 20px;
+          margin: 20px 0;
+          width: 80%;
+          max-width: 600px;
+        }
+      
+        .result-card h3 {
+          margin-top: 0;
+          color: #333;
+        }
+      
+        .result-card p {
+          color: #666;
+        }
+      
+        .result-card a {
+          color: #005490;
+          text-decoration: none;
+        }
+      
+        .result-card a:hover {
+          text-decoration: underline;
+        }
+      </style>
+      
+  </head>
+  <body>
+    <header id="header_wrapper">
+      <div class="header_box">
+        <div class="search_bar" style="display: flex; align-items: center;">
+          <div class="logo">
+            <a href="index.html">
+              <img src="img/SMClogo.png" alt="logo" style="width: 80px; height: auto" />
+            </a>
+          </div>
+          <!-- Dropdown Menu -->
+          <select
+            id="search_option"
+            style="height: 34px; margin-right: 8px; padding: 5px; border-radius: 4px; border: 1px solid #ccc;"
+          >
+            <option value="professors">Professors</option>
+            <option value="classes">Classes</option>
+          </select>
+          <!-- Search Input -->
+          <input
+            type="text"
+            id="search_input"
+            placeholder="Search..."
+            style="flex-grow: 1; padding: 5px; border-radius: 4px; border: 1px solid #ccc; height: 23px;"
+          />
+          <button
+            id="search_button"
+            style="margin-left: 10px; padding: 5px 15px; border-radius: 4px; background-color: #005490; color: #fff; border: none; cursor: pointer; height: 35px;"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </header>
+    <div class="main-content" id="search_results">
+      <!-- Search Results -->
+    </div>
+
+    <script>
+        // 解析 URL 参数
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+        const option = urlParams.get('option');
+      
+        // 填充搜索框
+        if (query) document.getElementById('search_input').value = query;
+        if (option) document.getElementById('search_option').value = option;
+      
+        // 自动执行搜索
+        if (query && option) {
+          handleSearch(query, option);
+        }
+      
+        // 点击按钮触发搜索
+        document.getElementById('search_button').addEventListener('click', () => {
+          const searchOption = document.getElementById('search_option').value;
+          const searchInput = document.getElementById('search_input').value.trim();
+          handleSearch(searchInput, searchOption);
+        });
+      
+        async function handleSearch(query, option) {
+          const searchResults = document.getElementById('search_results');
+          searchResults.innerHTML = ''; // 清空之前的结果
+      
+          if (!query) {
+            displayError('Please enter a search term.');
+            return;
+          }
+      
+          const baseUrl = 'http://localhost:3000';
+          const url = option === 'professors'
+            ? `${baseUrl}/professors/search?name=${encodeURIComponent(query)}`
+            : `${baseUrl}/course/${encodeURIComponent(query)}`;
+      
+          try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+            const data = await response.json();
+      
+            // 根据选项调用不同的展示函数
+            if (option === 'professors') {
+              displayProfessors(data);
+            } else if (option === 'classes') {
+              displayCourse(data);
+            }
+          } catch (error) {
+            displayError('An error occurred while fetching data. Please try again.');
+            console.error('Error:', error);
+          }
+        }
+      
+        // Function to display professor details
+        function displayProfessors(professors) {
+          const searchResults = document.getElementById('search_results');
+          if (!professors || professors.length === 0) {
+            displayError('No professors found.');
+            return;
+          }
+      
+          professors.forEach((professor) => {
+            const card = createCard(`
+              <h3>${professor.name}</h3>
+              <p><strong>Department:</strong> ${professor.department || 'N/A'}</p >
+              <p><strong>Email:</strong> ${professor.email || 'N/A'}</p >
+              <p><strong>Courses:</strong> ${professor.courses?.join(', ') || 'N/A'}</p >
+              <p><strong>Relevant Reviews:</strong> ${
+                professor.relevant_reviews?.join(', ') || 'N/A'
+              }</p >
+            `);
+            searchResults.appendChild(card);
+          });
+        }
+      
+        // Function to display course details
+        function displayCourse(course) {
+          const searchResults = document.getElementById('search_results');
+          if (!course) {
+            displayError('Course not found.');
+            return;
+          }
+      
+          const professorDetails = course.professor
+            ? `
+            <p><strong>Professor:</strong> ${course.professor.name}</p >
+            <p><strong>Professor Reviews:</strong> ${
+              course.professor.relevant_reviews?.join(', ') || 'N/A'
+            }</p >
+            `
+            : '<p><strong>Professor:</strong> N/A</p >';
+      
+          const card = createCard(`
+            <h3>${course.name}</h3>
+            <p><strong>Description:</strong> ${course.description || 'N/A'}</p >
+            ${professorDetails}
+            <p><strong>Prerequisites:</strong> ${course.prerequisites?.join(', ') || 'None'}</p >
+            <p><strong>Lecture Slide:</strong> <a href=" " target="_blank">View Slide</a ></p >
+            <p><strong>Final Exam:</strong> <a href="${course.final_exam_example}" target="_blank">View Exam</a ></p >
+          `);
+          searchResults.appendChild(card);
+        }
+      
+        function createCard(content) {
+          const card = document.createElement('div');
+          card.className = 'result-card';
+          card.innerHTML = content;
+          return card;
+        }
+      
+        function displayError(message) {
+          const searchResults = document.getElementById('search_results');
+          searchResults.innerHTML = `<p style="color: red;">${message}</p>`;
+        }
+      </script>      
+  </body>
+</html>
